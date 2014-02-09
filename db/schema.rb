@@ -30,7 +30,7 @@ ActiveRecord::Schema.define(:version => 20140209213513) do
     t.integer "author_id"
   end
 
-  create_table "friends", :force => true do |t|
+  create_table "friendships", :force => true do |t|
     t.integer "friend_id"
     t.integer "user_id"
   end
