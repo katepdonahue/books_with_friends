@@ -26,10 +26,9 @@ FriendsLibrary::Application.routes.draw do
   #   end
 
   # Sample resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
+    resources :users do
+      resources :books, :authors, :reviews
+    end
 
   # Sample resource route with more complex sub-resources
   #   resources :products do
