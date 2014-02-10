@@ -10,7 +10,7 @@ friendLibControllers.controller('UserListCtrl', [
       $scope.users = data;
     });
 
-    $scope.orderProp = 'name';
+    $scope.orderProp = 'username';
 
   }]);
 
@@ -23,3 +23,16 @@ friendLibControllers.controller('UserDetailCtrl', [
       $scope.user = data[0];
     });
   }]);
+
+friendLibControllers.controller('BookListCtrl', [
+  '$scope',
+  '$http',
+  function($scope, $http) {
+    $http.get('/books.json').success(function(data) {
+      $scope.user = data;
+    });
+
+    $scope.orderProp = 'name';
+
+  }]);
+
