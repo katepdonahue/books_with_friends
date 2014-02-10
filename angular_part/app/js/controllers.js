@@ -36,3 +36,12 @@ friendLibControllers.controller('BookListCtrl', [
 
   }]);
 
+friendLibControllers.controller('BookDetailCtrl', [
+  '$scope',
+  '$http',
+  '$routeParams'
+  function($scope, $http, $routeParams) {
+    $http.get('/books/' + $routeParams.id + '.json').success(function(data) {
+      $scope.book = data[0];
+    });
+  }]);

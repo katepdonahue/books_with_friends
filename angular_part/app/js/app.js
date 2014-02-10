@@ -20,5 +20,9 @@ friendLibApp.config([
     when('books/', {
       templateUrl: 'partials/books.html',
       controller: 'BookListCtrl'
+    }).
+    when('/books/:id', {
+      templateUrl: 'partials/books/detail.html',
+      controller: 'BookDetailCtrl'
     });
   }]);
