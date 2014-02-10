@@ -14,7 +14,7 @@ friendLibControllers.controller('UserListCtrl', [
 
   }]);
 
-friendLibControllers.controller('UserDataCtrl', [
+friendLibControllers.controller('UserDetailCtrl', [
   '$scope',
   '$http',
   '$routeParams'
