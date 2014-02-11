@@ -1,7 +1,7 @@
 class HomesController < ActionController::Base
 
   def index
-    render 'app/index.html'
+    render 'public/app/index.html'
   end
 
 end
