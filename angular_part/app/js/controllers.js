@@ -32,7 +32,7 @@ friendLibControllers.controller('BookListCtrl', [
       $scope.books = data;
     });
 
-    $scope.orderProp = 'name';
+    $scope.orderProp = 'title';
 
   }]);
 
@@ -43,5 +43,27 @@ friendLibControllers.controller('BookDetailCtrl', [
   function($scope, $http, $routeParams) {
     $http.get('/books/' + $routeParams.id + '.json').success(function(data) {
       $scope.book = data[0];
+    });
+  }]);
+
+friendLibControllers.controller('AuthorListCtrl', [
+  '$scope',
+  '$http',
+  function($scope, $http) {
+    $http.get('/authors.json').success(function(data) {
+      $scope.authors = data;
+    });
+
+    $scope.orderProp = 'last_name';
+
+  }]);
+
+friendLibControllers.controller('AuthorDetailCtrl', [
+  '$scope',
+  '$http',
+  '$routeParams'
+  function($scope, $http, $routeParams) {
+    $http.get('/authors/' + $routeParams.id + '.json').success(function(data) {
+      $scope.author = data[0];
     });
   }]);
