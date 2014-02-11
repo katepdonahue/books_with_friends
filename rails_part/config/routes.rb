@@ -30,6 +30,8 @@ FriendsLibrary::Application.routes.draw do
       resources :books, :authors, :reviews
     end
 
+    resources :books
+
   # Sample resource route with more complex sub-resources
   #   resources :products do
   #     resources :comments

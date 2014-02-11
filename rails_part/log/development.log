@@ -896,3 +896,53 @@ Processing by BooksController#index as JSON
   [1m[35mUser Load (0.1ms)[0m  SELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", "2"]]
   [1m[36mBook Load (0.6ms)[0m  [1mSELECT "books".* FROM "books" INNER JOIN "book_users" ON "books"."id" = "book_users"."book_id" WHERE "book_users"."user_id" = 2[0m
 Completed 200 OK in 110.2ms (Views: 31.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/2/books/3.json" for 127.0.0.1 at 2014-02-11 13:34:14 -0500
+Processing by BooksController#show as JSON
+  Parameters: {"user_id"=>"2", "id"=>"3"}
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", "3"]]
+Completed 200 OK in 7.0ms (Views: 0.3ms | ActiveRecord: 0.6ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/users/2/books/3.json" for 127.0.0.1 at 2014-02-11 13:38:01 -0500
+Processing by BooksController#show as JSON
+  Parameters: {"user_id"=>"2", "id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1[0m  [["id", "3"]]
+Completed 200 OK in 6.3ms (Views: 0.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/books/3.json" for 127.0.0.1 at 2014-02-11 13:38:09 -0500
+Processing by BooksController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", "3"]]
+Completed 200 OK in 1.3ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/books/3.json" for 127.0.0.1 at 2014-02-11 13:38:14 -0500
+Processing by BooksController#show as JSON
+  Parameters: {"id"=>"3"}
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1[0m  [["id", "3"]]
+Completed 200 OK in 1.1ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/books/4.json" for 127.0.0.1 at 2014-02-11 13:38:21 -0500
+Processing by BooksController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", "4"]]
+Completed 200 OK in 1.1ms (Views: 0.2ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/books/4.json" for 127.0.0.1 at 2014-02-11 13:38:24 -0500
+Processing by BooksController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[36mBook Load (0.1ms)[0m  [1mSELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1[0m  [["id", "4"]]
+Completed 200 OK in 1.1ms (Views: 0.3ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/books/4.json" for 127.0.0.1 at 2014-02-11 13:38:26 -0500
+Processing by BooksController#show as JSON
+  Parameters: {"id"=>"4"}
+  [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", "4"]]
+Completed 200 OK in 1.3ms (Views: 0.3ms | ActiveRecord: 0.1ms)
