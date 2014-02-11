@@ -27,7 +27,7 @@ FriendsLibrary::Application.routes.draw do
 
   # Sample resource route with sub-resources:
 
-    root :to => 'home#index'
+    root :to => 'homes#index'
     resources :books
 
     # resources :users do
