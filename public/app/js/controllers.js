@@ -2,6 +2,18 @@
 
 var friendLibControllers = angular.module('friendLibControllers', []);
 
+friendLibControllers.controller('HomeCtrl', [
+  '$scope',
+  '$http',
+  function($scope, $http) {
+    $http.get('/books.json').success(function(data) {
+      $scope.books = data;
+    });
+
+    $scope.orderProp = 'title';
+
+  }]);
+
 friendLibControllers.controller('UserListCtrl', [
   '$scope',
   '$http',

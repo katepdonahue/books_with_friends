@@ -9,6 +9,10 @@ friendLibApp.config([
   '$routeProvider',
   function($routeProvider) {
     $routeProvider.
+    when('/', {
+      templateUrl: 'app/partials/home.html',
+      controller: 'HomeCtrl'
+    }).
     when('/users', {
       templateUrl: 'app/partials/users.html',
       controller: 'UserListCtrl'
