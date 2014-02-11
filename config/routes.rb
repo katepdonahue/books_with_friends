@@ -29,6 +29,7 @@ FriendsLibrary::Application.routes.draw do
 
     root :to => 'homes#index'
     resources :books
+    resources :users
 
     # resources :users do
     #   resources :books

@@ -10,11 +10,11 @@ friendLibApp.config([
   function($routeProvider) {
     $routeProvider.
     when('/users', {
-      templateUrl: 'partials/users.html',
+      templateUrl: 'app/partials/users.html',
       controller: 'UserListCtrl'
     }).
     when('/users/:id', {
-      templateUrl: 'partials/users-detail.html',
+      templateUrl: 'app/partials/user-detail.html',
       controller: 'UserDetailCtrl'
     }).
     when('/', {
@@ -22,15 +22,15 @@ friendLibApp.config([
       controller: 'BookListCtrl'
     }).
     when('/books/:id', {
-      templateUrl: 'partials/books-detail.html',
+      templateUrl: 'app/partials/book-detail.html',
       controller: 'BookDetailCtrl'
     }).
     when('/authors', {
-      templateUrl: 'partials/authors.html',
+      templateUrl: 'app/partials/authors.html',
       controller: 'AuthorListCtrl'
     }).
     when('/authors/:id', {
-      templateUrl: 'partials/authors-detail.html',
+      templateUrl: 'app/partials/author-detail.html',
       controller: 'AuthorDetailCtrl'
     });
   }]);

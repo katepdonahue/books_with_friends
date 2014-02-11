@@ -20,7 +20,7 @@ friendLibControllers.controller('UserDetailCtrl', [
   '$routeParams',
   function($scope, $http, $routeParams) {
     $http.get('/users/' + $routeParams.id + '.json').success(function(data) {
-      $scope.user = data[0];
+      $scope.user = data;
     });
   }]);
 
@@ -42,7 +42,7 @@ friendLibControllers.controller('BookDetailCtrl', [
   '$routeParams',
   function($scope, $http, $routeParams) {
     $http.get('/books/' + $routeParams.id + '.json').success(function(data) {
-      $scope.book = data[0];
+      $scope.book = data;
     });
   }]);
 
@@ -64,6 +64,6 @@ friendLibControllers.controller('AuthorDetailCtrl', [
   '$routeParams',
   function($scope, $http, $routeParams) {
     $http.get('/authors/' + $routeParams.id + '.json').success(function(data) {
-      $scope.author = data[0];
+      $scope.author = data;
     });
   }]);
