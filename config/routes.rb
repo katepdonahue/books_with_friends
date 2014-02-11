@@ -28,8 +28,19 @@ FriendsLibrary::Application.routes.draw do
   # Sample resource route with sub-resources:
 
     root :to => 'homes#index'
-    resources :books
-    resources :users
+
+    get '/books' => 'books#index', :as => 'books'
+    post '/books' => 'books#create'
+    get '/books/:id' => 'books#show', :as => 'book'
+    put '/books/:id' => 'books#update'
+    delete '/books/:id' => 'books#destroy'
+
+    get '/users' => 'users#index', :as => 'users'
+    post '/users' => 'users#create'
+    get '/users/:id' => 'users#show', :as => 'user'
+    put '/users/:id' => 'users#update'
+    delete '/users/:id' => 'users#destroy'
+
     get '/authors' => 'authors#index', :as => :authors      
     get '/authors/:id' => 'authors#show', :as => :author
 
