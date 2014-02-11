@@ -26,11 +26,25 @@ FriendsLibrary::Application.routes.draw do
   #   end
 
   # Sample resource route with sub-resources:
+    resources :books
+
     resources :users do
-      resources :books, :authors, :reviews
+      resources :books
+      resources :authors do
+        resources :books do
+          resources :reviews
+        end
+      end
     end
 
-    resources :books
+    resources :reviews do
+      resources :users do
+        resources :books do
+          resources :authors
+        end
+      end
+    end
+
 
   # Sample resource route with more complex sub-resources
   #   resources :products do

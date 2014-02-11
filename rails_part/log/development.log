@@ -946,3 +946,6 @@ Processing by BooksController#show as JSON
   Parameters: {"id"=>"4"}
   [1m[35mBook Load (0.1ms)[0m  SELECT "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", "4"]]
 Completed 200 OK in 1.3ms (Views: 0.3ms | ActiveRecord: 0.1ms)
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
+Connecting to database specified by database.yml
