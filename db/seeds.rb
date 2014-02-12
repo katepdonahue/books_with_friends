@@ -28,7 +28,7 @@ Author.create([{:first_name=>"Tillow", :last_name=>"Brown"},
                {:first_name=>"Crips", :last_name=>"Pooler"}, 
                {:first_name=>"Lotta", :last_name=>"Fifferson"}])
 
-Review.create([{:subject=>"cool", :body=>"I was the best book I've ever read.", :user_id=>2, :book_id=>1},
+Review.create([{:subject=>"cool", :body=>"It was the best book I've ever read.", :user_id=>2, :book_id=>1},
                {:subject=>"Goodbye", :body=>"Don't read this book.", :user_id=>3, :book_id=>5}])
 
 Friendship.create([{:friend_id=>2, :user_id=>1},
