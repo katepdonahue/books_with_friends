@@ -25,6 +25,10 @@ friendLibApp.config([
       templateUrl: 'app/partials/books.html',
       controller: 'BookListCtrl'
     }).
+    when('/books/new', {
+      templateUrl: 'app/partials/new_book.html',
+      controller: 'NewBookCtrl'
+    }).
     when('/books/:id', {
       templateUrl: 'app/partials/book-detail.html',
       controller: 'BookDetailCtrl'

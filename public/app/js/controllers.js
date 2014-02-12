@@ -93,3 +93,5 @@ friendLibControllers.controller('UsersBookCtrl', [
     $scope.orderProp = 'title';
 
   }]);
+
+friendLibControllers.controller('NewBookCtrl', []);
