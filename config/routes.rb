@@ -44,6 +44,8 @@ FriendsLibrary::Application.routes.draw do
     get '/authors' => 'authors#index', :as => :authors      
     get '/authors/:id' => 'authors#show', :as => :author
 
+    get '/users/:user_id/books' => 'books#index'
+
     # resources :users do
     #   resources :books
     #   resources :authors do
