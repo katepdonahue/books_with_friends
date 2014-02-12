@@ -1,7 +1,12 @@
 <div class="container">
   <h1>Users</h1>
+  <input id="search" type="text" ng-model="query"/>
+  <select ng-model="orderProp">
+    <option value="username">Username</option>
+    <option value="email">Email</option>
+  </select>
   <ul>
-    <li ng-repeat="user in users" class="user">
+    <li ng-repeat="user in users | filter:query | orderBy:orderProp" class="user">
       <div class="info">
         <p>{{user.id}}</p>
         <p>{{user.username}}</p>
