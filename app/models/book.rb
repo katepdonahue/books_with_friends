@@ -16,7 +16,19 @@ class Book < ActiveRecord::Base
     hash[:author] = "#{self.author.first_name} #{self.author.last_name}"
     hash[:year] = self.year
     hash[:isbn] = self.isbn
-    # hash[:user_id] = self.use
+    hash[:users] = []
+    self.users.each do |user|
+      hash[:users] << {:id => user.id, :username => user.username}
+    end
+    hash[:reviews] = []
+    self.reviews.each do |review|
+      hash[:reviews] << {:subject => review.subject,
+                         :body => review.body,
+                         :user_id => review.user_id,
+                         :username => review.user.username
+                        }
+    end
+    hash
   end
   
 end

@@ -12,9 +12,10 @@ describe Book do
         :genre => "happy",
         :author => "Tillow Brown",
         :year => 2009,
-        :isbn => 124562468,
-        :users => [{:id => 1, :username =>"Kate"}]
-        :reviews => [{:review => "It was the best book I've ever read.", 
+        :isbn => "124562468",
+        :users => [{:id => 1, :username =>"Kate"}],
+        :reviews => [{:subject => "cool",
+                      :body => "It was the best book I've ever read.", 
                       :user_id => 2,
                       :username => "Jon"}]
       }
