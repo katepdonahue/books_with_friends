@@ -12,9 +12,7 @@ class BooksController < ActionController::Base
 
   def show
     @book = Book.find(params[:id])
-    respond_to do |format|
-      format.json { render :json => @book}
-    end
+    render json: @book.as_json(:except => :author_id, :include => [:author, :users, :reviews => {:only => [:body, :subject], :include => {:user => {:except => :email}}}])
   end
 
   # def new #   maybe just need create?
