@@ -15,16 +15,10 @@ class BooksController < ActionController::Base
     render json: @book.as_json(:except => :author_id, :include => [:author, :users, :reviews => {:only => [:body, :subject], :include => {:user => {:except => :email}}}])
   end
 
-  # def new #   maybe just need create?
-  # end
-
   def create
     @book = Book.create(params[:book])
     redirect_to @book
   end
-
-  # def edit # maybe just need update?
-  # end
 
   def update
     @book = Book.find(params[:id])

@@ -3,13 +3,13 @@
   <input id="search" type="text" ng-model="query"/>
   <select ng-model="orderProp">
     <option value="title">Title</option>
-    <option value="author">Author</option>
+    <option value="author.last_name">Author</option>
   </select>
   <ul>
     <li ng-repeat="book in books | filter:query | orderBy:orderProp" class="book">
       <div class="info">
         <p>{{book.title}}</p>
-        <p>{{book.author}}</p>
+        <p>By {{book.author.first_name}} {{book.author.last_name}}</p>
       </div>
     </li>
   </ul>
