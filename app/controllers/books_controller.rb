@@ -3,11 +3,10 @@ class BooksController < ActionController::Base
   def index # users/:user_id/books or friends/books to see all of your friends books
     if params[:user_id]
       @books = User.find(params[:user_id]).books
+      render json: @books.as_json(:only => [:id, :title, :year], :include => :author)
     else
       @books = Book.all
-    end
-    respond_to do |format|
-      format.json { render :json => @books }
+      render json: @books.as_json(:only => [:id, :title, :year], :include => [:author, :users => {:except => :email}])
     end
   end
 

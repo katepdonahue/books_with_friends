@@ -30,5 +30,8 @@ class Book < ActiveRecord::Base
     end
     hash
   end
+
+  def self.get_all_info(array = Book.all)
+  end
   
 end
