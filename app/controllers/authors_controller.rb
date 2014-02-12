@@ -3,16 +3,12 @@ class AuthorsController < ActionController::Base
 
   def index # show all authors of your books or friends books
     @authors = Author.all
-    respond_to do |format|
-      format.json { render :json => @authors }
-    end
+    render json: @authors.as_json
   end
 
   def show
     @author = Author.find(params[:id])
-    respond_to do |format|
-      format.json { render :json => @author}
-    end
+    render json: @author.as_json(:include => {:books => {:only => [:id, :title, :year]}})
   end
 
 end

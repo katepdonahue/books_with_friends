@@ -77,6 +77,7 @@ friendLibControllers.controller('AuthorDetailCtrl', [
   function($scope, $http, $routeParams) {
     $http.get('/authors/' + $routeParams.id + '.json').success(function(data) {
       $scope.author = data;
+      $scope.books = data.books;
     });
   }]);
 
