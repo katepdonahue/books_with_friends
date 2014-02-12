@@ -3,7 +3,7 @@
 <ul>
   <li ng-repeat="book in books">
     <div class="info">
-      <p>{{book.title}}</p>
+      <a href="#/books/{{book.id}}">{{book.title}}</a>
       <p>{{book.year}}</p>
     </div>
   </li>
