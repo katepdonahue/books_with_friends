@@ -8,8 +8,8 @@
   <ul>
     <li ng-repeat="book in books | filter:query | orderBy:orderProp" class="book">
       <div class="info">
-        <p>{{book.title}}</p>
-        <p>By {{book.author.first_name}} {{book.author.last_name}}</p>
+        <a href="#/books/{{book.id}}">{{book.title}}</a>
+        <p>By<a href="#/authors/{{book.author.id}}"> {{book.author.first_name}} {{book.author.last_name}}</a></p>
       </div>
     </li>
   </ul>
