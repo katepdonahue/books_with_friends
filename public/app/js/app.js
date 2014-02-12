@@ -37,6 +37,10 @@ friendLibApp.config([
       templateUrl: 'app/partials/author-detail.html',
       controller: 'AuthorDetailCtrl'
     }).
+    when('/users/:id/books', {
+      templateUrl: 'app/partials/books.html',
+      controller: 'UsersBookCtrl'
+    }).
     otherwise('/', {
       templateUrl: 'app/partials/home.html',
       controller: 'HomeCtrl'
