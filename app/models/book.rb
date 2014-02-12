@@ -7,5 +7,9 @@ class Book < ActiveRecord::Base
   has_many :reviews
 
   accepts_nested_attributes_for :book_users
+
+  def get_info
+
+  end
   
 end
