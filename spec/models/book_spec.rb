@@ -13,8 +13,7 @@ describe Book do
         :author => "Tillow Brown",
         :year => 2009,
         :isbn => 124562468,
-        :user_id => 1,
-        :username => "Kate",
+        :users => [{:id => 1, :username =>"Kate"}]
         :reviews => [{:review => "It was the best book I've ever read.", 
                       :user_id => 2,
                       :username => "Jon"}]
