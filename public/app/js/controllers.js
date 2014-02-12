@@ -79,3 +79,16 @@ friendLibControllers.controller('AuthorDetailCtrl', [
       $scope.author = data;
     });
   }]);
+
+friendLibControllers.controller('UsersBookCtrl', [
+  '$scope',
+  '$http',
+  '$routeParams',
+  function($scope, $http) {
+    $http.get('/users/' + $routeParams.user_id + '/books.json').success(function(data) {
+      $scope.books = data;
+    });
+
+    $scope.orderProp = 'title';
+
+  }]);
