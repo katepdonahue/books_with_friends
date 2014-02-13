@@ -5,16 +5,25 @@ var friendLibApp = angular.module('friendLibApp', [
   'friendLibControllers'
   ]);
 
+friendLibApp
+  .config(['$locationProvider', function($locationProvider) {
+    $locationProvider.html5Mode(true);
+  }]);
+
 friendLibApp.config([
   '$routeProvider',
-  '$locationProvider',
-  function($locationProvider) {
-    $locationProvider.html5Mode(true)},
   function($routeProvider) {
     $routeProvider.
     when('/', {
       templateUrl: 'app/partials/home.html',
-      controller: 'HomeCtrl'
+      redirectTo: function(current, path, search) {
+        if(search.goto) {
+          return "/" + search.goto - ".json";
+        }
+        else {
+          return "/";
+        }
+      }
     }).
     when('/users', {
       templateUrl: 'app/partials/users.html',
@@ -29,8 +38,7 @@ friendLibApp.config([
       controller: 'BookListCtrl'
     }).
     when('/books/new', {
-      templateUrl: 'app/partials/new_book.html',
-      controller: 'NewBookCtrl'
+      templateUrl: 'app/partials/new_book.html'
     }).
     when('/books/:id', {
       templateUrl: 'app/partials/book-detail.html',
@@ -48,8 +56,5 @@ friendLibApp.config([
       templateUrl: 'app/partials/books.html',
       controller: 'UsersBookCtrl'
     }).
-    otherwise('/', {
-      templateUrl: 'app/partials/home.html',
-      controller: 'HomeCtrl'
-    });
+    otherwise({redirectTo:"/"});
   }]);
