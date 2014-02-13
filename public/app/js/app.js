@@ -3,13 +3,13 @@
 var friendLibApp = angular.module('friendLibApp', [
   'ngRoute',
   'friendLibControllers'
-  ])
-  .config(['$locationProvider', function($locationProvider) {
-    $locationProvider.html5Mode(true);
-  }]);
+  ]);
 
 friendLibApp.config([
   '$routeProvider',
+  '$locationProvider',
+  function($locationProvider) {
+    $locationProvider.html5Mode(true)},
   function($routeProvider) {
     $routeProvider.
     when('/', {
