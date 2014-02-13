@@ -27,8 +27,6 @@ FriendsLibrary::Application.routes.draw do
 
   # Sample resource route with sub-resources:
 
-    root :to => 'homes#index'
-
     get '/books' => 'books#index', :as => 'books'
     post '/books' => 'books#create'
     get '/books/:id' => 'books#show', :as => 'book'
@@ -45,6 +43,12 @@ FriendsLibrary::Application.routes.draw do
     get '/authors/:id' => 'authors#show', :as => :author
 
     get '/users/:user_id/books' => 'books#index'
+
+    match "api" => proc { [404, {}, ['Invalid API endpoint']] }
+    match "api/*path" => proc { [404, {}, ['Invalid API endpoint']] }
+    match "/*path" => redirect("/?goto=%{path}")
+
+    root :to => 'homes#index'
 
     # resources :users do
     #   resources :books
