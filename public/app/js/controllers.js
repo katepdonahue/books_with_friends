@@ -95,3 +95,4 @@ friendLibControllers.controller('UsersBookCtrl', [
   }]);
 
 friendLibControllers.controller('NewBookCtrl', []);
+

@@ -16,8 +16,16 @@ class BooksController < ActionController::Base
   end
 
   def create
-    @book = Book.create(params[:book])
-    redirect_to @book
+    @book = Book.new
+    @book.title = params[:title]
+    author = Author.new
+    author.first_name = params[:author][:first_name]
+    author.last_name = params[:author][:last_name]
+    author.save
+    @book.author_id = author.id
+    @book.save
+    # find author that matches name in database and grab author id, otherwise create new author
+    File.read(File.join('public/app/partials', '/#/books/#{@book.id}'))
   end
 
   def update
