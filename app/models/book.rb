@@ -1,3 +1,5 @@
+require 'HTTParty'
+
 class Book < ActiveRecord::Base
   attr_accessible :title, :isbn, :genre, :author_id, :year, :s_thumb, :thumb, :description
 
