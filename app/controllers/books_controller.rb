@@ -20,7 +20,8 @@ class BooksController < ActionController::Base
 
   def create
     @book = Book.new
-    @book.title = params[:title]
+    @book.isbn = params[:isbn]
+    response = HTTParty.get('https://www.googleapis.com/books/v1/volumes?q=isbn:#{@book.isbn}')
     author = Author.new
     author.first_name = params[:author][:first_name]
     author.last_name = params[:author][:last_name]
