@@ -29,6 +29,7 @@ class BooksController < ActionController::Base
     @book.year = response["items"][0]["volumeInfo"]["publishedDate"][0..3].to_i
     @book.thumb = response["items"][0]["volumeInfo"]["imageLinks"]["smallThumbnail"]
     @book.l_thumb = response["items"][0]["volumeInfo"]["imageLinks"]["thumbnail"]
+    @book.description = response["items"][0]["volumeInfo"]["description"]
     author = Author.new
     name_array = response["items"][0]["volumeInfo"]["authors"][0].split
     author.first_name = name_array[0..-2].join(" ")
