@@ -5,10 +5,10 @@ var friendLibApp = angular.module('friendLibApp', [
   'friendLibControllers'
   ]);
 
-friendLibApp
-  .config(['$locationProvider', function($locationProvider) {
-    $locationProvider.html5Mode(true);
-  }]);
+// friendLibApp
+//   .config(['$locationProvider', function($locationProvider) {
+//     $locationProvider.html5Mode(true);
+//   }]);
 
 friendLibApp.config([
   '$routeProvider',
@@ -16,14 +16,14 @@ friendLibApp.config([
     $routeProvider.
     when('/', {
       templateUrl: 'app/partials/home.html',
-      redirectTo: function(current, path, search) {
-        if(search.goto) {
-          return "/" + search.goto - ".json";
-        }
-        else {
-          return "/";
-        }
-      }
+      // redirectTo: function(current, path, search) {
+      //   if(search.goto) {
+      //     return "/" + search.goto - ".json";
+      //   }
+      //   else {
+      //     return "/";
+      //   }
+      // }
     }).
     when('/users', {
       templateUrl: 'app/partials/users.html',
