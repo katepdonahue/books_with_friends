@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140214193807) do
+ActiveRecord::Schema.define(:version => 20140214200028) do
 
   create_table "authors", :force => true do |t|
     t.string "first_name"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20140214193807) do
     t.integer "year"
     t.string  "s_thumb"
     t.string  "thumb"
+    t.string  "description"
   end
 
   create_table "friendships", :force => true do |t|
