@@ -1,5 +1,3 @@
-require 'HTTParty'
-
 class BooksController < ActionController::Base
 
   def index # users/:user_id/books or friends/books to see all of your friends books
