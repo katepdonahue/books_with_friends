@@ -57,7 +57,7 @@ friendLibControllers.controller('BookDetailCtrl', [
       $scope.book = data;
     });
     $http.get('https://www.googleapis.com/books/v1/volumes?q=isbn:061815082X').success(function(data) {
-      $scope.pic = data["items"]["imageLinks"]["thumbnail"];
+      $scope.pic = data["items"][0]["volumeInfo"]["imageLinks"]["thumbnail"];
     });
   }]);
 
