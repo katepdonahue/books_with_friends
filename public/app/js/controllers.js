@@ -55,9 +55,9 @@ friendLibControllers.controller('BookDetailCtrl', [
   function($scope, $http, $routeParams) {
     $http.get('/api/books/' + $routeParams.id + '.json').success(function(data) {
       $scope.book = data;
-    });
-    $http.get('https://www.googleapis.com/books/v1/volumes?q=isbn:061815082X').success(function(data) {
-      $scope.pic = data["items"][0]["volumeInfo"]["imageLinks"]["thumbnail"];
+      $http.get('https://www.googleapis.com/books/v1/volumes?q=isbn:' + data.isbn).success(function(data) {
+        $scope.pic = data["items"][0]["volumeInfo"]["imageLinks"]["thumbnail"];
+      });
     });
   }]);
 
