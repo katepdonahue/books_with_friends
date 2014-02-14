@@ -27,24 +27,24 @@ FriendsLibrary::Application.routes.draw do
 
   # Sample resource route with sub-resources:
 
-    get '/books' => 'books#index', :as => 'books'
-    post '/books' => 'books#create'
-    get '/books/:id' => 'books#show', :as => 'book'
-    put '/books/:id' => 'books#update'
-    delete '/books/:id' => 'books#destroy'
+    get '/api/books' => 'books#index', :as => 'books'
+    post '/api/books' => 'books#create'
+    get '/api/books/:id' => 'books#show', :as => 'book'
+    put '/api/books/:id' => 'books#update'
+    delete '/api/books/:id' => 'books#destroy'
 
-    get '/users' => 'users#index', :as => 'users'
-    post '/users' => 'users#create'
-    get '/users/:id' => 'users#show', :as => 'user'
-    put '/users/:id' => 'users#update'
-    delete '/users/:id' => 'users#destroy'
+    get '/api/users' => 'users#index', :as => 'users'
+    post '/api/users' => 'users#create'
+    get '/api/users/:id' => 'users#show', :as => 'user'
+    put '/api/users/:id' => 'users#update'
+    delete '/api/users/:id' => 'users#destroy'
 
-    get '/authors' => 'authors#index', :as => :authors      
-    get '/authors/:id' => 'authors#show', :as => :author
+    get '/api/authors' => 'authors#index', :as => :authors      
+    get '/api/authors/:id' => 'authors#show', :as => :author
 
-    get '/users/:user_id/books' => 'books#index'
-    
-    # match "/*path" => redirect("/?goto=%{path}")
+    get '/api/users/:user_id/books' => 'books#index'
+
+    match "/*path" => redirect("/?goto=%{path}")
 
     root :to => 'homes#index'
 
