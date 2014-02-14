@@ -18,7 +18,7 @@ friendLibApp.config([
       templateUrl: 'app/partials/home.html',
       // redirectTo: function(current, path, search) {
       //   if(search.goto) {
-      //     return "/" + search.goto - ".json";
+      //     return "/" + search.goto;
       //   }
       //   else {
       //     return "/";

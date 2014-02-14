@@ -6,7 +6,7 @@ friendLibControllers.controller('HomeCtrl', [
   '$scope',
   '$http',
   function($scope, $http) {
-    $http.get('/books.json').success(function(data) {
+    $http.get('/api/books.json').success(function(data) {
       $scope.books = data;
     });
 
@@ -18,7 +18,7 @@ friendLibControllers.controller('UserListCtrl', [
   '$scope',
   '$http',
   function($scope, $http) {
-    $http.get('/users.json').success(function(data) {
+    $http.get('/api/users.json').success(function(data) {
       $scope.users = data;
     });
 
@@ -31,7 +31,7 @@ friendLibControllers.controller('UserDetailCtrl', [
   '$http',
   '$routeParams',
   function($scope, $http, $routeParams) {
-    $http.get('/users/' + $routeParams.id + '.json').success(function(data) {
+    $http.get('/api/users/' + $routeParams.id + '.json').success(function(data) {
       $scope.user = data;
     });
   }]);
@@ -40,7 +40,7 @@ friendLibControllers.controller('BookListCtrl', [
   '$scope',
   '$http',
   function($scope, $http) {
-    $http.get('/books.json').success(function(data) {
+    $http.get('/api/books.json').success(function(data) {
       $scope.books = data;
     });
 
@@ -53,8 +53,11 @@ friendLibControllers.controller('BookDetailCtrl', [
   '$http',
   '$routeParams',
   function($scope, $http, $routeParams) {
-    $http.get('/books/' + $routeParams.id + '.json').success(function(data) {
+    $http.get('/api/books/' + $routeParams.id + '.json').success(function(data) {
       $scope.book = data;
+    });
+    $http.get('https://www.googleapis.com/books/v1/volumes?q=isbn:061815082X').success(function(data) {
+      $scope.pic = data["items"]["imageLinks"]["thumbnail"];
     });
   }]);
 
@@ -62,7 +65,7 @@ friendLibControllers.controller('AuthorListCtrl', [
   '$scope',
   '$http',
   function($scope, $http) {
-    $http.get('/authors.json').success(function(data) {
+    $http.get('/api/authors.json').success(function(data) {
       $scope.authors = data;
     });
 
@@ -75,7 +78,7 @@ friendLibControllers.controller('AuthorDetailCtrl', [
   '$http',
   '$routeParams',
   function($scope, $http, $routeParams) {
-    $http.get('/authors/' + $routeParams.id + '.json').success(function(data) {
+    $http.get('/api/authors/' + $routeParams.id + '.json').success(function(data) {
       $scope.author = data;
       $scope.books = data.books;
     });
@@ -86,7 +89,7 @@ friendLibControllers.controller('UsersBookCtrl', [
   '$http',
   '$routeParams', 
   function($scope, $http, $routeParams) {
-    $http.get('/users/' + $routeParams.user_id + '/books.json').success(function(data) {
+    $http.get('/api/users/' + $routeParams.user_id + '/books.json').success(function(data) {
       $scope.books = data;
     });
 

@@ -3,11 +3,3 @@
 <p>Year Pubsished: {{book.year}}</p>
 <p>ISBN: {{book.isbn}}</p>
 <a href="#/book/{{book.id}}/reviews">Reviews</a>
-<script>
-  // 061815082X
-
-  var aws = new AWS(ENV['AMZ_PUB_KEY'], ENV['AMZ_API_KEY']);
-  aws.itemLookup('1234567890',
-                 function(){alert('it worked');},
-                 function(){alert('it failed');});
-</script> 

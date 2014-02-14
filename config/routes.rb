@@ -44,7 +44,10 @@ FriendsLibrary::Application.routes.draw do
 
     get '/api/users/:user_id/books' => 'books#index'
 
-    match "/*path" => redirect("/?goto=%{path}")
+    # get "api", :to => proc { [404, {}, ['Invalid API endpoint']] }
+    # get "api/*path", :to => proc { [404, {}, ['Invalid API endpoint']] }
+
+    # match "/*path" => redirect("/?goto=%{path}")
 
     root :to => 'static_pages#index'
 
