@@ -17,16 +17,16 @@ BookUser.create([{:user_id=>1, :book_id=>1},
                  {:user_id=>3, :book_id=>4},
                  {:user_id=>3, :book_id=>5}])
 
-Book.create([{:title=>"The Best Book", :isbn=>"124562468", :genre=>"happy", :author_id=>1, :year=>2009},
-             {:title=>"The Second Best Book", :isbn=>"5256245234", :genre=>"slightly happy", :author_id=>1, :year=>2010},
-             {:title=>"A Book", :isbn=>"157245725", :genre=>"happy", :author_id=>2, :year=>2001},
-             {:title=>"Book Book", :isbn=>"113485634", :genre=>"happy", :author_id=>3, :year=>1975}, 
-             {:title=>"Hello Book", :isbn=>"1331735634", :genre=>"slightly happy", :author_id=>4, :year=>2005}])
+Book.create([{:title=>"Animal Farm", :isbn=>"0451524667", :genre=>"science fiction", :author_id=>1, :year=>2009},
+             {:title=>"The Hobbit", :isbn=>"061815082X", :genre=>"fantasy", :author_id=>2, :year=>2001},
+             {:title=>"The Orphan Master's Son", :isbn=>"9780812982626", :genre=>"fiction", :author_id=>3, :year=>2012},
+             {:title=>"Ender's Game", :isbn=>"9780765362339", :genre=>"science fiction", :author_id=>4, :year=>2008}, 
+             {:title=>"Ender's Shadow", :isbn=>"0812575717", :genre=>"science fiction", :author_id=>4, :year=>2000}])
 
-Author.create([{:first_name=>"Tillow", :last_name=>"Brown"}, 
-               {:first_name=>"Fandy", :last_name=>"Door"}, 
-               {:first_name=>"Crips", :last_name=>"Pooler"}, 
-               {:first_name=>"Lotta", :last_name=>"Fifferson"}])
+Author.create([{:first_name=>"George", :last_name=>"Orwell"}, 
+               {:first_name=>"J.R.R.", :last_name=>"Tolkien"}, 
+               {:first_name=>"Adam", :last_name=>"Johnson"}, 
+               {:first_name=>"Orson Scott", :last_name=>"Card"}])
 
 Review.create([{:subject=>"cool", :body=>"It was the best book I've ever read.", :user_id=>2, :book_id=>1},
                {:subject=>"Goodbye", :body=>"Don't read this book.", :user_id=>3, :book_id=>5}])
