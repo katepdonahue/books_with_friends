@@ -46,7 +46,7 @@ FriendsLibrary::Application.routes.draw do
 
     match "/*path" => redirect("/?goto=%{path}")
 
-    root :to => 'staticpages#index'
+    root :to => 'static_pages#index'
 
     # resources :users do
     #   resources :books
