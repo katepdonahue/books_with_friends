@@ -29,8 +29,8 @@ ActiveRecord::Schema.define(:version => 20140214193807) do
     t.string  "genre"
     t.integer "author_id"
     t.integer "year"
+    t.string  "s_thumb"
     t.string  "thumb"
-    t.string  "l_thumb"
   end
 
   create_table "friendships", :force => true do |t|
