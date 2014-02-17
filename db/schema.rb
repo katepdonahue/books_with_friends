@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140214200028) do
+ActiveRecord::Schema.define(:version => 20140217185029) do
 
   create_table "authors", :force => true do |t|
     t.string "first_name"
@@ -48,7 +48,6 @@ ActiveRecord::Schema.define(:version => 20140214200028) do
 
   create_table "users", :force => true do |t|
     t.string "username"
-    t.string "email"
   end
 
 end
