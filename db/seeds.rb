@@ -6,9 +6,9 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-User.create([{:username=>"Kate", :email=>"kate@fmail.com"},
-            {:username=>"Jon", :email=>"jon@fmail.com"},
-            {:username=>"Armando", :email=>"armando@fmail.com"}])
+# User.create([{:username=>"Kate", :email=>"kate@fmail.com"},
+#             {:username=>"Jon", :email=>"jon@fmail.com"},
+#             {:username=>"Armando", :email=>"armando@fmail.com"}])
 
 BookUser.create([{:user_id=>1, :book_id=>1},
                  {:user_id=>1, :book_id=>2},
