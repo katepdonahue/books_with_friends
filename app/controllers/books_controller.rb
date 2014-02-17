@@ -1,8 +1,8 @@
 class BooksController < ActionController::Base
 
   def index # users/:user_id/books or friends/books to see all of your friends books
-    if params[:user_id]
-      books = User.find(params[:user_id]).books
+    if user_signed_in?
+      books = User.find(current_user.id).books
       @books = books.as_json(:only => [:id, :title, :year, :thumb], :include => :author)
     else
       books = Book.all
