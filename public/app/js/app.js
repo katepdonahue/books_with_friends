@@ -56,5 +56,9 @@ friendLibApp.config([
       templateUrl: 'app/partials/books.html',
       controller: 'UsersBookCtrl'
     }).
+    when('/users/sign_out', {
+      templateUrl: 'app/partials/index.html',
+      controller: 'UserSignOutCtrl'
+    }).
     otherwise({redirectTo:"/"});
   }]);
