@@ -30,7 +30,7 @@ friendLibApp.config([
       controller: 'UserListCtrl'
     }).
     when('/users/sign_out', {
-      templateUrl: 'app/partials/index.html',
+      templateUrl: 'app/index.html',
       controller: 'UserSignOutCtrl'
     }).
     when('/users/:id', {
