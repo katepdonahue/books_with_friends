@@ -29,6 +29,10 @@ friendLibApp.config([
       templateUrl: 'app/partials/users.html',
       controller: 'UserListCtrl'
     }).
+    when('/users/sign_out', {
+      templateUrl: 'app/partials/index.html',
+      controller: 'UserSignOutCtrl'
+    }).
     when('/users/:id', {
       templateUrl: 'app/partials/user-detail.html',
       controller: 'UserDetailCtrl'
@@ -55,10 +59,6 @@ friendLibApp.config([
     when('/users/:user_id/books', {
       templateUrl: 'app/partials/books.html',
       controller: 'UsersBookCtrl'
-    }).
-    when('/users/sign_out', {
-      templateUrl: 'app/partials/index.html',
-      controller: 'UserSignOutCtrl'
     }).
     otherwise({redirectTo:"/"});
   }]);
