@@ -43,6 +43,8 @@ friendLibControllers.controller('BookListCtrl', [
     $http.get('/api/books.json').success(function(data) {
       if(data["email"]) {
         $scope.books = data["books"];
+        $scope.user = {id: data["id"], email: data["email"], username: data["username"]};
+
       }
       else {
         $scope.books = data;
