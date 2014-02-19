@@ -44,10 +44,13 @@ friendLibControllers.controller('BookListCtrl', [
       if(data["email"]) {
         $scope.books = data["books"];
         $scope.user = {id: data["id"], email: data["email"], username: data["username"]};
-
+        $scope.state1 = "noclasssss";
+        $scope.state2 = "hidden";
       }
       else {
         $scope.books = data;
+        $scope.state1 = "hidden";
+        $scope.state2 = "noclasssss";
       }
     });
 
