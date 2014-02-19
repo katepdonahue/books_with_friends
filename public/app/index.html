@@ -17,7 +17,7 @@
         <% if user_signed_in? %>
           Logged in as <%= current_user.email %>.
           <%= link_to 'Edit profile', edit_user_registration_path %> |
-          <a href="/#/users/sign_out">Logout</a>
+          <a href="localhost:3000/users/sign_out" method="delete">Logout</a>
         <% else %>
           <%= link_to 'Sign up', new_user_registration_path %> |
           <%= link_to 'Login', new_user_session_path %>

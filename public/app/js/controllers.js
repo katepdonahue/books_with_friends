@@ -97,12 +97,5 @@ friendLibControllers.controller('UsersBookCtrl', [
 
   }]);
 
-friendLibControllers.controller('UserSignOutCtrl', [
-  '$http', 
-  function($http) {
-    $http({ method: 'DELETE', url: '/users/sign_out'}).success(function(data) {
-    });
-  }]);
-
 friendLibControllers.controller('NewBookCtrl', []);
 
