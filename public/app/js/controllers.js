@@ -41,7 +41,12 @@ friendLibControllers.controller('BookListCtrl', [
   '$http',
   function($scope, $http) {
     $http.get('/api/books.json').success(function(data) {
-      $scope.books = data;
+      if(data["email"]) {
+        $scope.books = data["books"];
+      }
+      else {
+        $scope.books = data;
+      }
     });
 
     $scope.orderProp = 'title';
