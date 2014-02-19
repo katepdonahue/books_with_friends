@@ -9,10 +9,10 @@
     <li ng-repeat="book in books | filter:query | orderBy:orderProp" class="book">
       <div class="info">
         <div>
-          <img src={{book.s_thumb}}/>
+          <img src={{book.book.s_thumb}}/>
         </div>
-        <a href="#/books/{{book.id}}">{{book.title}}</a>
-        <p>By<a href="#/authors/{{book.author.id}}"> {{book.author.first_name}} {{book.author.last_name}}</a></p>
+        <a href="#/books/{{book.id}}">{{book.book.title}}</a>
+        <p>By<a href="#/authors/{{book.author.id}}"> {{book.book.author.first_name}} {{book.book.author.last_name}}</a></p>
       </div>
     </li>
     <li>{{books}}</li>
