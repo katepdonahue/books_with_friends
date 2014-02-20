@@ -4,7 +4,7 @@
       <span class={{state1}}>
         Logged in as {{user.email}}.
         <a href="users/edit">Edit Profile</a> |
-        <a href="users/sign_out" method="DELETE">Logout</a>
+        <span id="logout"><a href="users/sign_out">Logout</a></span>
       </span>
       <span class={{state2}}>
         <a href="users/sign_in">Log in</a> |
@@ -28,7 +28,14 @@
         <p>By<a href="#/authors/{{book.author.id}}"> {{book.author.first_name}} {{book.author.last_name}}</a></p>
       </div>
     </li>
-    <li>{{books}}</li>
-    <li>{{user}}</li>
   </ul>
 </div>
+<script type="text/javascript">
+  $(document).ready( function() {
+    $logout = $("#logout");
+    $logout.on("click", function(e) {
+      e.preventDefault();
+      console.log("hey!");
+    });
+  });
+</script>
