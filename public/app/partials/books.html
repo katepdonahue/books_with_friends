@@ -35,7 +35,11 @@
     $logout = $("#logout");
     $logout.on("click", function(e) {
       e.preventDefault();
-      console.log("hey!");
+      $.ajax({
+        type: "DELETE",
+        url: "users/sign_out",
+        data: "current_user=2"
+      });
     });
   });
 </script>
