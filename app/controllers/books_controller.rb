@@ -8,7 +8,6 @@ class BooksController < ActionController::Base
       books = Book.all
       @books = books.as_json(:only => [:id, :title, :year, :s_thumb] , :include => [:author, :users => {:except => :email}])
     end
-    puts current_user.inspect
     respond_to do |format|
       format.json{ render :json => @books }
     end
@@ -36,6 +35,14 @@ class BooksController < ActionController::Base
   def destroy # only from your own profile
     Book.find(params[:id]).destroy
     redirect_to @books
+  end
+
+  def current_user
+    if user_signed_in?
+      render :json => {name: "kate"}
+    else
+      render :status => 404
+    end
   end
 
 end

@@ -14,4 +14,12 @@ class UsersController < ActionController::Base
     end
   end
 
+  def current
+    if user_signed_in?
+      render :json => current_user.as_json(:except => :email)
+    else
+      render :status => 404
+    end
+  end
+
 end

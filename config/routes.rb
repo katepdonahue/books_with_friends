@@ -1,7 +1,7 @@
 FriendsLibrary::Application.routes.draw do
   devise_for :users
 
-  get '/users/current_user' => 'devise/sessions#show'
+  get 'users/current' => 'users#current'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -56,5 +56,9 @@ friendLibApp.config([
       templateUrl: 'app/partials/books.html',
       controller: 'UsersBookCtrl'
     }).
+    directive('currentUser', {
+      templateUrl: 'app/partials/current_user.html',
+      controller: 'CurrentUserCtrl'
+    }).
     otherwise({redirectTo:"/"});
   }]);
