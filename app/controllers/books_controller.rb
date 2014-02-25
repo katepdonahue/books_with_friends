@@ -37,12 +37,4 @@ class BooksController < ActionController::Base
     redirect_to @books
   end
 
-  def current_user
-    if user_signed_in?
-      render :json => {name: "kate"}
-    else
-      render :status => 404
-    end
-  end
-
 end

@@ -40,15 +40,6 @@ friendLibControllers.controller('BookListCtrl', [
   '$scope',
   '$http',
   function($scope, $http) {
-    $http.get('/users/current_user').success(function(data) {
-      $scope.user = data;
-      $scope.state1 = "noclasssss";
-      $scope.state2 = "hidden";
-    }).
-    error(function(result) {
-      $scope.state1 = "hidden";
-      $scope.state2 = "noclasssss";
-    });
     $http.get('/api/books.json').success(function(data) {
       $scope.books = data;
     });
@@ -114,7 +105,7 @@ friendLibControllers.controller('CurrentUserCtrl', [
   '$scope',
   '$http',
   function($scope, $http) {
-    $http.get('/users/current_user').success(function(data) {
+    $http.get('/users/current.json').success(function(data) {
       $scope.user = data;
       $scope.state1 = "noclasssss";
       $scope.state2 = "hidden";
