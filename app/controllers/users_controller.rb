@@ -8,7 +8,7 @@ class UsersController < ActionController::Base
   end
 
   def show
-    @user = User.current_user
+    @user = User.find(params[:id])
     respond_to do |format|
       format.json { render :json => @user}
     end
