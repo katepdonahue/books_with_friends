@@ -5,6 +5,7 @@ var friendLibApp = angular.module('friendLibApp', [
   'friendLibControllers'
   ]);
 
+
 // friendLibApp
 //   .config(['$locationProvider', function($locationProvider) {
 //     $locationProvider.html5Mode(true);
@@ -56,9 +57,5 @@ friendLibApp.config([
       templateUrl: 'app/partials/books.html',
       controller: 'UsersBookCtrl'
     }).
-    // directive('currentUser', {
-    //   templateUrl: 'app/partials/current_user.html',
-    //   controller: 'CurrentUserCtrl'
-    // }).
     otherwise({redirectTo:"/"});
   }]);
