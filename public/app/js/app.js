@@ -1,8 +1,13 @@
 'use strict';
 
+// angular.module('friendLibApp', []);
+
+// with dependencies:
+
 var friendLibApp = angular.module('friendLibApp', [
   'ngRoute',
-  'friendLibControllers'
+  'friendLibControllers',
+  'friendLibApp.directives'
   ]);
 
 
@@ -59,3 +64,4 @@ friendLibApp.config([
     }).
     otherwise({redirectTo:"/"});
   }]);
+
