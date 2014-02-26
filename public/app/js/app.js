@@ -1,5 +1,12 @@
 'use strict';
 
+app.directive('ngSparkline', function() {
+  return {
+    restrict: 'A',
+    template: '<div class="sparkline">hello?</div>'
+  }
+});
+
 var friendLibApp = angular.module('friendLibApp', [
   'ngRoute',
   'friendLibControllers'
