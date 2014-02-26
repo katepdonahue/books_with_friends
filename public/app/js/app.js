@@ -1,13 +1,8 @@
 'use strict';
 
-// angular.module('friendLibApp', []);
-
-// with dependencies:
-
 var friendLibApp = angular.module('friendLibApp', [
   'ngRoute',
-  'friendLibControllers',
-  'friendLibApp.directives'
+  'friendLibControllers'
   ]);
 
 
