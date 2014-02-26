@@ -1,5 +1,7 @@
 'use strict';
 
+var app = angular.module('app', []);
+
 app.directive('ngSparkline', function() {
   return {
     restrict: 'A',
