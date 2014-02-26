@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="friendLibApp">
+<html lang="en">
   <head>
     <meta charset="utf-8"/>
     <title></title>
@@ -15,7 +15,10 @@
   <body>
     <div class="container">
       <h1>Friends Library</h1>
-      <div current-user></div>
+      <div ng-controller="Ctrl">
+        <div my-customer></div>
+      </div>
+      <!-- <div current-user></div> -->
       <!-- <div ng-view></div> -->
     </div>
   </body>
