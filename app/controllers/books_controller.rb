@@ -23,7 +23,7 @@ class BooksController < ActionController::Base
     @book.isbn = params[:isbn]
     @book.get_info
     # find author that matches name in database and grab author id, otherwise create new author
-    redirect_to @book
+    redirect_to "/#/books/#{@book.id}"
   end
 
   def update
