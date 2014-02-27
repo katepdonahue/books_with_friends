@@ -19,9 +19,14 @@ class BooksController < ActionController::Base
   end
 
   def create
-    @book = Book.new
-    @book.isbn = params[:isbn]
-    @book.get_info
+    if Book.find_by_isbn(params[:isbn]) # if the book's already in the database
+      @book = Book.find_by_isbn(params[:isbn])
+    else
+      @book = Book.new
+      @book.isbn = params[:isbn]
+      @book.get_info
+    end
+    @book.add_user
     # find author that matches name in database and grab author id, otherwise create new author
     redirect_to "/#/books/#{@book.id}"
   end
