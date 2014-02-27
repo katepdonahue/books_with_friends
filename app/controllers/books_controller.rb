@@ -34,7 +34,10 @@ class BooksController < ActionController::Base
 
   def destroy # only from your own profile
     Book.find(params[:id]).destroy
-    redirect_to "/#/books"
+    @book = Book.all
+    respond_to do |format|
+      format.json{ render :json => @books }
+    end
   end
 
 end
