@@ -24,11 +24,11 @@ class Book < ActiveRecord::Base
     author.last_name = name_array[-1]
     author.save
     self.author_id = author.id
+    self.save
   end
 
   def add_user(current_user)
-    self.users.build(current_user)
-    self.save
+    self.book_users.create(:user_id => current_user.id)
   end
   
 

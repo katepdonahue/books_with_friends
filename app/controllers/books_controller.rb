@@ -1,3 +1,5 @@
+require 'debugger'
+
 class BooksController < ActionController::Base
 
   def index # users/:user_id/books or friends/books to see all of your friends books
@@ -26,9 +28,9 @@ class BooksController < ActionController::Base
       @book.isbn = params[:isbn]
       @book.get_info
     end
-    @book.add_user
+    @book.add_user(current_user)
     # find author that matches name in database and grab author id, otherwise create new author
-    redirect_to "/#/books/#{@book.id}"
+    redirect_to "/#/books/#{@book.id}"  
   end
 
   def update
