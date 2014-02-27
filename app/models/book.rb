@@ -24,6 +24,7 @@ class Book < ActiveRecord::Base
     author.last_name = name_array[-1]
     author.save
     self.author_id = author.id
+    self.users.build(current_user)
     self.save
   end
   
