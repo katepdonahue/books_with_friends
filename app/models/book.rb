@@ -28,7 +28,9 @@ class Book < ActiveRecord::Base
   end
 
   def add_user(current_user)
-    self.book_users.create(:user_id => current_user.id)
+    if self.book_users.find_by_user_id(current_user.id)
+      self.book_users.create(:user_id => current_user.id)
+    end
   end
   
 

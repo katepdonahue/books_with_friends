@@ -12,6 +12,7 @@
           <img ng-src={{book.s_thumb}}/>
         </div>
         <a href="#/books/{{book.id}}">{{book.title}}</a>
+        <p>Book ID {{book.id}}</p>
         <p>By<a href="#/authors/{{book.author.id}}"> {{book.author.first_name}} {{book.author.last_name}}</a></p>
         <form ng-submit="sendDelete(book.id)">
           <input type="submit" value="Delete">
