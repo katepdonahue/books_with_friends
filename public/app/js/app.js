@@ -66,6 +66,10 @@ friendLibApp.config([
       templateUrl: 'app/partials/books.html',
       controller: 'UsersBookCtrl'
     }).
+    when('/current_user', {
+      templateUrl: 'app/partials/current_user.html',
+      controller: 'CurrentUserCtrl'
+    }).
     otherwise({redirectTo:"/"});
   }]);
 
