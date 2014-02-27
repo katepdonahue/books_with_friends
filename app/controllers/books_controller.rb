@@ -41,6 +41,7 @@ class BooksController < ActionController::Base
 
   def destroy # only from your own profile
     Book.find(params[:id]).destroy
+    BookUser.where(:book_id=>params[:id], :user_id=>current_user.id)
     @book = Book.all
     respond_to do |format|
       format.json{ render :json => @books }
