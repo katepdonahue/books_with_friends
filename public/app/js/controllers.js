@@ -47,9 +47,14 @@ friendLibControllers.controller('BookListCtrl', [
     $scope.orderProp = 'title'; // do I need one of these in sendDelete?
 
     $scope.sendDelete = function (bookId) {
-      $http.delete('/api/books/' + bookId).success();
-      $http.get('/api/books.json').success(function(data) {
-        $scope.books = data;
+      $http.delete('/api/books/' + bookId).success(function(data) {
+        $http.get('/api/books.json').success(function(data) {
+          $scope.books = data;
+        });
+      }).error(function(response) {
+        $http.get('/api/books.json').success(function(data) {
+          $scope.books = data;
+        });
       });
     };
 
