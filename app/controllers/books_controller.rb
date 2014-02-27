@@ -34,7 +34,7 @@ class BooksController < ActionController::Base
 
   def destroy # only from your own profile
     Book.find(params[:id]).destroy
-    redirect_to @books
+    redirect_to "/#/books"
   end
 
 end

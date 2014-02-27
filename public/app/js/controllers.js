@@ -46,6 +46,12 @@ friendLibControllers.controller('BookListCtrl', [
 
     $scope.orderProp = 'title';
 
+    $scope.sendDelete = function (bookId) {
+      $http.delete('/api/books/' + bookId).success(function(data) {
+
+      });
+    };
+
   }
 
   ]);
